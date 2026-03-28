@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AddClass</title>
+<title>AnnounceAll</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -20,35 +20,35 @@
 
   <main class="content">
     
-<h1 style="color:red;">AddClass</h1>
+<h1 style="color:red;">AnnounceAll</h1>
 
 <h2>Syntax</h2>
-<pre>AddClass( class, color, skin, position, angle, weapon1, ammo1 ,weapon2, ammo2, weapon3, ammo3 );</pre>
+<pre>AnnounceAll(message, type)</pre>
 
 <h2>Arguments / Description</h2>
-<pre>int class - Class/team id
-cRGB color - Color
-int skin - Skin id
-Vector position - Position of the class
-float angle - Angle
-int weapon1 - First weapon id of the class
-int ammo1 - Ammo of the first weapon
-int weapon2 - Second weapon id 2 of the class
-int ammo2 - Ammo of the second weapon
-int weapon3 - Third weapon id 3 of the class
-int ammo3 - Ammo of the third weapon
+<pre>string message - The message to send
+int type - The type of the message
 </pre>
 
 <h2>Example</h2>
-<pre>function onScriptLoad(){
-    AddClass( 1, RGB( 24, 255, 241 ) ,0, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 2, RGB( 100,200,300 ) ,5, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 3, RGB( 51, 51, 255 ) ,97, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 4, RGB( 121, 91, 9 ) ,16, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 5, RGB( 255, 51, 153 ) ,34, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
+<pre>function onPlayerCommand(player, command, arguments)
+{    
+	if (cmd == "ann" || cmd == "announce")
+	{
+		if(!text) 
+		{
+			PrivMessage(player, "Use /" + cmd + " <message>");
+		}
+		else
+		{
+			AnnounceAll ( text + "", 3);
+			MessagePlayer(">> You have announced: " + text,player )
+		}
+	}
+	return 1;
 }</pre>
 
-<h2>Related</h2><ul><li><a href="./setuseclasses.html">SetUseClasses</a></li><li style="color:red;"><a href="./usingclasses.html">UsingClasses</a></li><li><a href="./">AddClass</a></li></ul>
+<h2>Related</h2><ul><li><a href="./clientmessage.html">ClientMessage</a></li><li><a href="./clientmessagetoall.html">ClientMessageToAll</a></li><li><a href="./announce.html">Announce</a></li><li><a href="./announceall.html">AnnounceAll</a></li><li><a href="./message.html">Message</a></li><li><a href="./messageallexcept.html">MessageAllExcept</a></li><li><a href="./messageplayer.html">MessagePlayer</a></li><li><a href="./privmessage.html">PrivMessage</a></li><li><a href="./privmessageall.html">PrivMessageAll</a></li><li><a href="./sendplayermessage.html">SendPlayerMessage</a></li></ul>
 
   </main>
 </div>

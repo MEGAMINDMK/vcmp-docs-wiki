@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AddClass</title>
+<title>BanPlayer</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -20,35 +20,37 @@
 
   <main class="content">
     
-<h1 style="color:red;">AddClass</h1>
+<h1 style="color:red;">BanPlayer</h1>
 
 <h2>Syntax</h2>
-<pre>AddClass( class, color, skin, position, angle, weapon1, ammo1 ,weapon2, ammo2, weapon3, ammo3 );</pre>
+<pre>BanPlayer( player )</pre>
 
 <h2>Arguments / Description</h2>
-<pre>int class - Class/team id
-cRGB color - Color
-int skin - Skin id
-Vector position - Position of the class
-float angle - Angle
-int weapon1 - First weapon id of the class
-int ammo1 - Ammo of the first weapon
-int weapon2 - Second weapon id 2 of the class
-int ammo2 - Ammo of the second weapon
-int weapon3 - Third weapon id 3 of the class
-int ammo3 - Ammo of the third weapon
-</pre>
+<pre>Not available</pre>
 
 <h2>Example</h2>
-<pre>function onScriptLoad(){
-    AddClass( 1, RGB( 24, 255, 241 ) ,0, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 2, RGB( 100,200,300 ) ,5, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 3, RGB( 51, 51, 255 ) ,97, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 4, RGB( 121, 91, 9 ) ,16, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 5, RGB( 255, 51, 153 ) ,34, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
+<pre>function onPlayerCommand( player, cmd, text )
+{
+if ( cmd == "ban" )
+	{
+	    if ( player.Name == "Your Name" )
+	    {
+	        if ( text )
+            {
+	       local plr = FindPlayer( text );
+               if ( plr )
+               {
+               BanPlayer( plr );
+               }
+               else MessagePlayer( "[#ffffff]Invalid Player " , player );
+            }
+	        else MessagePlayer( "[#ffffff]Type /ban <player> " , player );
+	    }
+	    else MessagePlayer( "[#F02F0F] Your are not admin. " , player )
+	}
 }</pre>
 
-<h2>Related</h2><ul><li><a href="./setuseclasses.html">SetUseClasses</a></li><li style="color:red;"><a href="./usingclasses.html">UsingClasses</a></li><li><a href="./">AddClass</a></li></ul>
+<h2>Related</h2><ul><li><a href="./">BanPlayer</a></li><li><a href="./findplayer.html">FindPlayer</a></li><li><a href="./getplayeridfromname.html">GetPlayerIDFromName</a></li><li style="color:red;"><a href="./isworldcompatiblewithplayer.html">IsWorldCompatibleWithPlayer</a></li><li><a href="./kickplayer.html">KickPlayer</a></li><li><a href="./playsoundforplayer.html">PlaySoundForPlayer</a></li><li><a href="./player_action.html">Player.Action</a></li><li><a href="./player_addspeed.html">Player.AddSpeed</a></li><li><a href="./player_admin.html">Player.Admin</a></li><li style="color:red;"><a href="./player_aimdir.html">Player.AimDir</a></li><li style="color:red;"><a href="./player_aimpos.html">Player.AimPos</a></li><li><a href="./player_alpha.html">Player.Alpha</a></li><li><a href="./player_ammo.html">Player.Ammo</a></li><li><a href="./player_angle.html">Player.Angle</a></li><li><a href="./player_armour.html">Player.Armour</a></li><li><a href="./player_away.html">Player.Away</a></li><li><a href="./player_ban.html">Player.Ban</a></li><li><a href="./player_cameralocked.html">Player.CameraLocked</a></li><li><a href="./player_canattack.html">Player.CanAttack</a></li><li><a href="./player_candriveby.html">Player.CanDriveby</a></li><li><a href="./player_cash.html">Player.Cash</a></li><li><a href="./player_class.html">Player.Class</a></li><li><a href="./player_colour.html">Player.Colour</a></li><li><a href="./player_disarm.html">Player.Disarm</a></li><li><a href="./player_eject.html">Player.Eject</a></li><li><a href="./player_fps.html">Player.FPS</a></li><li><a href="./player_frozen.html">Player.Frozen</a></li><li><a href="./player_gamekeys.html">Player.GameKeys</a></li><li><a href="./player_getammoatslot.html">Player.GetAmmoAtSlot</a></li><li><a href="./player_getweaponatslot.html">Player.GetWeaponAtSlot</a></li><li><a href="./player_givemoney.html">Player.GiveMoney</a></li><li><a href="./player_giveweapon.html">Player.GiveWeapon</a></li><li><a href="./player_greenscanlines.html">Player.GreenScanlines</a></li><li><a href="./player_haschattags.html">Player.HasChatTags</a></li><li><a href="./player_hasmarker.html">Player.HasMarker</a></li><li><a href="./player_health.html">Player.Health</a></li><li><a href="./player_id.html">Player.ID</a></li><li><a href="./player_immunity.html">Player.Immunity</a></li><li><a href="./player_ip.html">Player.IP</a></li><li><a href="./player_iscrouching.html">Player.IsCrouching</a></li><li><a href="./player_isdrunk.html">Player.IsDrunk</a></li><li><a href="./player_isonfire.html">Player.IsOnFire</a></li><li><a href="./player_isonradar.html">Player.IsOnRadar</a></li><li><a href="./player_isspawned.html">Player.IsSpawned</a></li><li><a href="./player_key.html">Player.Key</a></li><li><a href="./player_kick.html">Player.Kick</a></li><li><a href="./player_name.html">Player.Name</a></li><li><a href="./player_ping.html">Player.Ping</a></li><li><a href="./player_playsound.html">Player.PlaySound</a></li><li><a href="./player_pos.html">Player.Pos</a></li><li><a href="./player_redirect.html">Player.Redirect</a></li><li><a href="./player_restorecamera.html">Player.RestoreCamera</a></li><li><a href="./player_removemarker.html">Player.RemoveMarker</a></li><li><a href="./player_removeweapon.html">Player.RemoveWeapon</a></li><li><a href="./player_score.html">Player.Score</a></li><li><a href="./player_secworld.html">Player.SecWorld</a></li><li><a href="./player_select__.html">Player.Select()</a></li><li><a href="./player_setalpha.html">Player.SetAlpha</a></li><li><a href="./player_setanim.html">Player.SetAnim</a></li><li><a href="./player_setdrunklevel.html">Player.SetDrunkLevel</a></li><li><a href="./player_setcamerapos.html">Player.SetCameraPos</a></li><li><a href="./player_setinterior.html">Player.SetInterior</a></li><li style="color:red;"><a href="./player_setmarker___bugged.html">Player.SetMarker - bugged</a></li><li><a href="./player_setwantedlevel.html">Player.SetWantedLevel</a></li><li><a href="./player_setweapon.html">Player.SetWeapon</a></li><li><a href="./player_showmarkers.html">Player.ShowMarkers</a></li><li><a href="./player_slot.html">Player.Slot</a></li><li><a href="./player_skin.html">Player.Skin</a></li><li><a href="./player_spawn.html">Player.Spawn</a></li><li><a href="./player_spectatetarget.html">Player.SpectateTarget</a></li><li><a href="./player_speed.html">Player.Speed</a></li><li><a href="./player_standingonobject.html">Player.StandingOnObject</a></li><li><a href="./player_standingonvehicle.html">Player.StandingOnVehicle</a></li><li><a href="./player_state.html">Player.State</a></li><li style="color:red;"><a href="./player_streamedtoplayer.html">Player.StreamedToPlayer</a></li><li><a href="./player_typing.html">Player.Typing</a></li><li><a href="./player_team.html">Player.Team</a></li><li><a href="./player_uniqueid.html">Player.UniqueID</a></li><li><a href="./player_uniqueid2.html">Player.UniqueID2</a></li><li><a href="./player_uniqueworld.html">Player.UniqueWorld</a></li><li><a href="./player_vehicle.html">Player.Vehicle</a></li><li><a href="./player_vehicleslot.html">Player.VehicleSlot</a></li><li><a href="./player_vehiclestatus.html">Player.VehicleStatus</a></li><li><a href="./player_wantedlevel.html">Player.WantedLevel</a></li><li><a href="./player_weapon.html">Player.Weapon</a></li><li><a href="./player_whitescanlines.html">Player.WhiteScanlines</a></li><li><a href="./player_widescreen.html">Player.Widescreen</a></li><li><a href="./player_world.html">Player.World</a></li><li><a href="./player_putinvehicleslot.html">Player.PutInVehicleSlot</a></li></ul>
 
   </main>
 </div>

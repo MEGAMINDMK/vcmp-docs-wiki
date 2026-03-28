@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AddClass</title>
+<title>Checkpoint.Color</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -20,35 +20,25 @@
 
   <main class="content">
     
-<h1 style="color:red;">AddClass</h1>
+<h1 style="color:red;">Checkpoint.Color</h1>
 
 <h2>Syntax</h2>
-<pre>AddClass( class, color, skin, position, angle, weapon1, ammo1 ,weapon2, ammo2, weapon3, ammo3 );</pre>
+<pre>Checkpoint.Color</pre>
 
 <h2>Arguments / Description</h2>
-<pre>int class - Class/team id
-cRGB color - Color
-int skin - Skin id
-Vector position - Position of the class
-float angle - Angle
-int weapon1 - First weapon id of the class
-int ammo1 - Ammo of the first weapon
-int weapon2 - Second weapon id 2 of the class
-int ammo2 - Ammo of the second weapon
-int weapon3 - Third weapon id 3 of the class
-int ammo3 - Ammo of the third weapon
+<pre>cRGB rgb - The checkpoint color
 </pre>
 
 <h2>Example</h2>
-<pre>function onScriptLoad(){
-    AddClass( 1, RGB( 24, 255, 241 ) ,0, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 2, RGB( 100,200,300 ) ,5, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 3, RGB( 51, 51, 255 ) ,97, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 4, RGB( 121, 91, 9 ) ,16, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
-    AddClass( 5, RGB( 255, 51, 153 ) ,34, Vector( -378.79, -537.962, 17.2832 ), 140.020, 21, 999 ,1, 1, 25, 255 );
+<pre>function onPlayerCommand( player, cmd, text )
+{
+	if ( cmd == "setcpcolor" )
+	{
+		FindCheckpoint(0).Color = RGB(255,255,255);
+	}
 }</pre>
 
-<h2>Related</h2><ul><li><a href="./setuseclasses.html">SetUseClasses</a></li><li style="color:red;"><a href="./usingclasses.html">UsingClasses</a></li><li><a href="./">AddClass</a></li></ul>
+<h2>Related</h2><ul><li><a href="./createcheckpoint.html">CreateCheckpoint</a></li><li><a href="./findcheckpoint.html">FindCheckpoint</a></li><li><a href="./">Checkpoint.Color</a></li><li><a href="./checkpoint_id.html">Checkpoint.ID</a></li><li><a href="./checkpoint_owner.html">Checkpoint.Owner</a></li><li><a href="./checkpoint_pos.html">Checkpoint.Pos</a></li><li><a href="./checkpoint_radius.html">Checkpoint.Radius</a></li><li><a href="./checkpoint_remove.html">Checkpoint.Remove</a></li><li><a href="./checkpoint_streamedtoplayer.html">Checkpoint.StreamedToPlayer</a></li><li><a href="./checkpoint_world.html">Checkpoint.World</a></li></ul>
 
   </main>
 </div>
